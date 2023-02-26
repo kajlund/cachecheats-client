@@ -1,6 +1,7 @@
 <script>
   import state from '../../stores/state'
   import BigNavbar from './BigNavbar.svelte'
+  import SmallNavbar from './SmallNavbar.svelte'
 
   let width
 
@@ -16,5 +17,5 @@
     <BigNavbar />
   </div>
 {:else}
-  Menu
+  <SmallNavbar />
 {/if}

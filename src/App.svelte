@@ -4,7 +4,7 @@
   import state from './stores/state'
 
   import Navbar from './components/navigation/Navbar.svelte';
-
+  import Sidebar from './components/navigation/Sidebar.svelte'
   // $: {
   //   console.log($location.pathname)
   // }
@@ -37,6 +37,9 @@
 </script>
 
 <Navbar />
+{#if $state.sidebar}
+  <Sidebar />
+{/if}
 <main>
   <svelte:component this={page} params={params} />
 </main>

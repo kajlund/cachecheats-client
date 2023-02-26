@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
 
 const CLEAN_STATE = {
-  sidebar: false,
+  sidebar: true,
   activePage: 'home'
 }
 
@@ -12,6 +12,11 @@ const store = {
   toggleItem: (item, value) => {
     stateStore.update(values => {
       return { ...values, [item]: value }
+    })
+  },
+  toggleSidebar: () => {
+    stateStore.update(values => {
+      return { ...values, sidebar: !values.sidebar }
     })
   },
   setActivePage: (url) => {
