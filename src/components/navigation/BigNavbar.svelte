@@ -1,5 +1,5 @@
 <script>
-  import state from '../../stores/state';
+  import state from '../../stores/state'
   import Logo from './Logo.svelte'
   import LoginLink from './LoginLink.svelte'
 </script>
@@ -11,17 +11,23 @@
       <li>
         <a href="/"
           class:selected={$state.activePage === 'home'}
-        >Home</a>
+        >
+          <i class="material-symbols-rounded">home</i>Home
+        </a>
       </li>
       <li>
         <a href="/caches"
           class:selected={$state.activePage === 'caches'}
-        >Caches</a>
+        >
+          <i class="material-symbols-rounded">distance</i>Caches
+        </a>
       </li>
       <li>
         <a href="/about"
           class:selected={$state.activePage === 'about'}
-        >About</a>
+        >
+          <i class="material-symbols-rounded">info</i>About
+        </a>
       </li>
     </ul>
     <LoginLink />
@@ -29,4 +35,10 @@
 </nav>
 
 <style>
+  a i {
+    font-size: 30px;
+  }
+  a.selected {
+    border-bottom: 3px solid var(--col-primary);
+  }
 </style>
