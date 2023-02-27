@@ -10,7 +10,6 @@
     display: flex;
     align-items: center;
     color: var(--col-primary);
-    margin-left: 1rem;
     margin-right: 1rem;
   }
   h1 {

@@ -5,13 +5,13 @@
 
 <div class="nav-aside">
 {#if $user.loggedOn}
-  <a href="/" class="btn btn-outline"
+  <a href="/logout" class="btn btn-outline"
     on:click={() => {
       state.toggleItem('sidebar', false)
     }}
   >Logout</a>
 {:else}
-  <a href="/" class="btn btn-outline"
+  <a href="/login" class="btn btn-outline"
     on:click={() => {
       state.toggleItem('sidebar', false)
     }}

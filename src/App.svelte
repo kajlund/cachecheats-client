@@ -3,11 +3,9 @@
   import routes from './lib/routes.js';
   import state from './stores/state'
 
+  import Logon from './components/Logon.svelte'
   import Navbar from './components/navigation/Navbar.svelte';
   import Sidebar from './components/navigation/Sidebar.svelte'
-  // $: {
-  //   console.log($location.pathname)
-  // }
 
   let page;
   let params;
@@ -33,8 +31,12 @@
 
   // Start the router
   router.start();
-
 </script>
+
+{#if $state.showLogon}
+  <Logon />
+{/if}
+
 
 <Navbar />
 {#if $state.sidebar}

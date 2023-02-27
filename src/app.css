@@ -104,34 +104,12 @@ ul {
 }
 
 /* Buttons */
-.btn,
-.btn-outline,
-.btn-primary {
-  letter-spacing: var(--spacing);
-  color: var(--col-primary);
-  border: 2px solid var(--col-primary);
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: var(--transition);
-  cursor: pointer;
-  font-size: 0.8rem;
-  background: transparent;
-}
 .btn:hover {
   background: var(--col-white);
   color: var(--col-white);
 }
-.btn-outline {
-  background: transparent;
-  color: var(--col-primary);
-  font-weight: bold;
-  border-radius: 1rem;
-}
 .btn-outline:hover {
-  background: var(--col-white);
-  color: var(--col-primary-dk);
-  border: 2px solid var(--col-primary-dk);
-  box-shadow: var(--shadow-md);
+
 }
 .btn-primary {
   background: var(--col-primary);
@@ -170,6 +148,8 @@ ul {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .nav-links {

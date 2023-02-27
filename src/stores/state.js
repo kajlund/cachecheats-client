@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store'
 
 const CLEAN_STATE = {
-  sidebar: true,
+  showLogon: false,
+  sidebar: false,
   activePage: 'home'
 }
 

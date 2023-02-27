@@ -20,7 +20,7 @@ export default [
   // },
   {
     path: "/about",
-    component: AboutPage
+    component: AboutPage,
   },
   {
     path: "*",
