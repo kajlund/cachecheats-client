@@ -31,7 +31,7 @@ const store = {
     }
 
     stateStore.update(values => {
-      console.log(page)
+      // console.log(page)
       return { ...values, activePage: page }
     })
   }

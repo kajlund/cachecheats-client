@@ -1,11 +1,9 @@
 <script>
   import state from '../../stores/state'
-  import user from '../../stores/user'
 
   import Burger from './Burger.svelte'
-  import Button from '../Button.svelte'
+  import LoginLogout from './LoginLogout.svelte'
   import Logo from './Logo.svelte'
-  import LoginLink from './LoginLink.svelte'
 </script>
 
 <nav class="navbar">
@@ -16,12 +14,6 @@
       }}
     />
     <Logo />
-    {#if $user.loggedOn}
-      <LoginLink />
-    {:else}
-      <Button caption="Login" style="outline" on:click={() => {
-        state.toggleItem('showLogon', true)
-      }}/>
-    {/if}
+    <LoginLogout />
   </div>
 </nav>

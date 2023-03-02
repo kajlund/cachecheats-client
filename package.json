@@ -16,6 +16,7 @@
     "eslint": "^8.34.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-svelte3": "^4.0.0",
+    "notyf": "^3.10.0",
     "page": "^1.11.6",
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",

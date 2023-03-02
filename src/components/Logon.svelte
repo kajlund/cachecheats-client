@@ -1,32 +1,33 @@
 <script>
 // @ts-nocheck
-  import { createEventDispatcher } from 'svelte'
   import isEmail from 'validator/es/lib/isEmail'
 
   import { login } from '../api/auth'
+  import state from '../stores/state'
+  import userStore from '../stores/user'
+  import notyf from '../lib/notyf'
   import Button from "./Button.svelte"
   import Modal from "./Modal.svelte"
   import TextInput from "./TextInput.svelte"
-
-  const dispatch = createEventDispatcher()
 
   let email = ''
   let password = ''
   let isValid
 
-
   $: isValid = isEmail(email) && password
 
   function cancel_handler() {
-    dispatch('cancelLogon')
+    state.toggleItem('showLogon', false)
   }
 
   const logon_handler = async () => {
     try {
-      const result = await login(email, password)
-      console.log(result)
+      await login(email, password)
+      state.toggleItem('showLogon', false)
+      notyf.success(`${$userStore.user.username} logged in`)
     } catch (error) {
-      console.error(error)
+      console.log(error)
+      notyf.error(error.message)
     }
   }
 </script>
@@ -53,7 +54,16 @@
       errorMessage="You need to provide a password"
       on:input={event => (password = event.target.value)}
     />
+    <div class="form-commands">
+      <Button type="submit" disabled={!isValid} style="outline" caption="Login"/>
+    </div>
+
   </form>
-  <Button disabled={!isValid} slot="footer" style="outline" caption="Login"
-    on:click={logon_handler}/>
 </Modal>
+
+<style>
+  .form-commands {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+</style>

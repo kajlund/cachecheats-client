@@ -26,7 +26,6 @@
   </div>
   <footer>
     <slot name="footer">
-      <Button on:click={closeModal}>Close</Button>
     </slot>
   </footer>
 </div>

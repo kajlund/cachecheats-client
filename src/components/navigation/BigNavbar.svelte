@@ -1,10 +1,8 @@
 <script>
   import state from '../../stores/state'
-  import user from '../../stores/user'
 
-  import Button from '../Button.svelte'
   import Logo from './Logo.svelte'
-  import LoginLink from './LoginLink.svelte'
+  import LoginLogout from './LoginLogout.svelte'
 </script>
 
 <nav class="navbar">
@@ -33,21 +31,9 @@
         </a>
       </li>
     </ul>
-    {#if $user.loggedOn}
-      <LoginLink />
-    {:else}
-      <Button caption="Login" style="outline" on:click={() => {
-        state.toggleItem('showLogon', true)
-      }}/>
-    {/if}
+    <LoginLogout />
   </div>
 </nav>
 
 <style>
-  a i {
-    font-size: 30px;
-  }
-  a.selected {
-    border-bottom: 3px solid var(--col-primary);
-  }
 </style>
