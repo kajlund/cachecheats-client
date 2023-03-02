@@ -19,10 +19,19 @@
   }
 </script>
 
-{#if $userStore.token}
-  <Button caption="Logoff" style="outline" on:click={logoff_handler}/>
-{:else}
-  <Button caption="Login" style="outline" on:click={() => {
-    state.toggleItem('showLogon', true)
-  }}/>
-{/if}
+<div class="nav-aside">
+  {#if $userStore.token}
+    <Button caption="Logoff" style="outline" on:click={logoff_handler}/>
+  {:else}
+    <Button caption="Login" style="outline" on:click={() => {
+      state.toggleItem('showLogon', true)
+    }}/>
+  {/if}
+</div>
+
+<style>
+  .nav-aside {
+    display: flex;
+    align-items: center;
+  }
+</style>

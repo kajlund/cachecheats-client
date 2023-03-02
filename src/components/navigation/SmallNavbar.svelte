@@ -2,7 +2,7 @@
   import state from '../../stores/state'
 
   import Burger from './Burger.svelte'
-  import LoginLogout from './LoginLogout.svelte'
+  import NavAside from './NavAside.svelte'
   import Logo from './Logo.svelte'
 </script>
 
@@ -14,6 +14,6 @@
       }}
     />
     <Logo />
-    <LoginLogout />
+    <NavAside />
   </div>
 </nav>
