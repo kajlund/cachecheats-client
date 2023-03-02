@@ -10,13 +10,11 @@ export const login = async (email, password) => {
     token: result.data.token,
     user: result.data.user,
   }
-  request.defaults.headers.common['Authorization'] = `Bearer ${result.data.token}`
   loginUser(data)
 }
 
 export const logout = async () => {
   // need to implement invalidation of tokens on server
-  request.defaults.headers.common['Authorization'] = null
   logoutUser()
 }
 
