@@ -68,7 +68,7 @@ img {
 
 h1, h2, h3, h4 {
   font-family: var(--ff-secondary);
-  color: var(--col-grey-md);
+  color: var(--col-primary);
   letter-spacing: var(--spacing);
   line-height: 1.25;
   margin-bottom: 0.75rem;
@@ -128,9 +128,11 @@ ul {
   text-align: center;
 }
 
+/* Shared between SmallNavbar & BigNavbar */
+
 .navbar {
   background: #fafafa;
-  height: 3rem;
+  height: 60px;
   position: fixed;
   z-index: 2;
   top: 0;
@@ -152,51 +154,9 @@ ul {
   padding-right: 1rem;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a {
-  display: flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
-  transition: var(--mainTransition);
-}
-
-.nav-links a i {
-  font-size: 30px;
-  margin-right: 0.5rem;
-}
-
-.nav-links a:hover {
-  border-bottom: 3px solid var(--col-primary);
-}
-/* Page Headings */
-.page-header {
-  height: 46px;
-  display: flex;
-  align-items: center;
-}
-.page-header h2 {
-  /* padding-top: 0.5rem; */
-  margin-right: 2rem;
-  font-size: 36px;
-}
-.page-header i {
-  height: 46px;
-  display: block;
-  font-size: 40px;
-  color: var(--col-grey-md)
-}
-
 .page {
   width: var(--smallWidth);
   max-width: var(--maxWidth);
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 6rem;
 }

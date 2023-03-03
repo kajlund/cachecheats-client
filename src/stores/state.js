@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store'
+import { writable , get } from 'svelte/store'
 
 const CLEAN_STATE = {
   showLogon: false,
@@ -29,11 +29,13 @@ const store = {
     } else {
       page = 'home'
     }
-
+    // console.log('setActivePage: ', page)
     stateStore.update(values => {
-      // console.log(page)
       return { ...values, activePage: page }
     })
+
+    const state = get(stateStore)
+    console.log('state.activePage = ', state.activePage)
   }
 }
 

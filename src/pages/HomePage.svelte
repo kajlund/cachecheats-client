@@ -2,18 +2,19 @@
   import {  Splide, SplideSlide } from '@splidejs/svelte-splide';
   import '@splidejs/svelte-splide/css'
 
+  import PageTitle from '../components/PageTitle.svelte'
+
   import Img01 from "../assets/geo01.jpg"
   import Img02 from "../assets/geo02.jpg"
   import Img03 from "../assets/geo03.jpg"
   import Img04 from "../assets/geo04.jpg"
   import Img05 from "../assets/geo05.jpg"
+
+  export let params
 </script>
 
 <section class="page">
-  <header class="page-header">
-    <i class="material-symbols-rounded">home</i>
-    <h2>Home</h2>
-  </header>
+  <PageTitle icon='home' title='Home' />
 
   <Splide aria-label="My Favorite Images">
     <SplideSlide>

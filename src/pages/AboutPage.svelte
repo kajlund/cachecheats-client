@@ -1,11 +1,11 @@
 <script>
+  import PageTitle from '../components/PageTitle.svelte'
+
+  export let params
 </script>
 
 <section class="page">
-  <header class="page-header">
-    <i class="material-symbols-rounded">info</i>
-    <h2>About</h2>
-  </header>
+  <PageTitle icon='info' title='About Cheats' />
 
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
     Inventore aperiam magnam consequuntur nesciunt accusantium
