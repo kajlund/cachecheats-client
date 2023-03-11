@@ -69,7 +69,7 @@
     color: var(--col-grey-dk);
     padding-left: 0.1rem;
   }
-  i {
+  .sidebar-links a i {
     margin-right: 0.3rem;
     font-size: 1.8rem;
   }
