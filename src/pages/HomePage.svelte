@@ -14,8 +14,6 @@
 </script>
 
 <section class="page">
-  <PageTitle icon='home' title='Home' />
-
   <Splide aria-label="My Favorite Images">
     <SplideSlide>
       <img src={Img01} alt="Geo 1"/>
