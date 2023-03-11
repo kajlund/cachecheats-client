@@ -12,7 +12,7 @@
   --col-white:           #fff;
   --col-grey-dk:         #333;
   --col-grey-md:         #ccc;
-  --col-grey-lt:         #f1f5f8;
+  --col-grey-lt:         #fafafa;
 
   --col-primary:         #ff9900;
   --col-primary-lt:      #ffcc66;
@@ -131,7 +131,7 @@ ul {
 /* Shared between SmallNavbar & BigNavbar */
 
 .navbar {
-  background: #fafafa;
+  background: var(--col-grey-lt);
   height: 60px;
   position: fixed;
   z-index: 2;
