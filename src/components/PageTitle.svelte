@@ -4,8 +4,13 @@
 </script>
 
 <header class="page-header">
-  <i class="material-symbols-rounded">{icon}</i>
-  <h2>{title}</h2>
+  <div class="title">
+    <i class="material-symbols-rounded">{icon}</i>
+    <h2>{title}</h2>
+  </div>
+  <div class="commands">
+    <slot></slot>
+  </div>
 </header>
 
 <style>
@@ -16,13 +21,18 @@
   align-items: center;
   margin: 1rem 0;
 }
-.page-header h2 {
+.title {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+.title h2 {
   /* padding-top: 0.5rem; */
   margin: 0;
   padding: 0;
   font-size: 40px;
 }
-.page-header i {
+.title i {
   /* height: 46px; */
   margin: 0;
   margin-top: -4px;
@@ -31,5 +41,10 @@
   font-size: 46px;
   color: var(--col-primary);
 }
-
+.commands {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 20%;
+}
 </style>
