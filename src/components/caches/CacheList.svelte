@@ -5,10 +5,11 @@
   import notyf from '../../lib/notyf'
   import caches from '../../stores/cache'
   import CacheCard from './CacheCard.svelte'
-  import Loading from '../Loading.svelte'
+  import Spinner from '../Spinner.svelte'
 
   let limit = 20
   let skip = 0
+  let loading = true
 
   onMount(async () => {
     try {
@@ -17,21 +18,24 @@
       caches.clear()
       caches.addItems(data.caches)
       console.log($caches)
-
+      loading = false
     } catch (error) {
       console.log(error)
+      loading = false
       notyf.error(error.message)
     }
   })
 </script>
 
-<div class="caches-center">
-  {#each $caches as cache (cache.id)}
-    <CacheCard {cache} />
-  {:else}
-    <Loading />
-  {/each}
-</div>
+{#if loading}
+  <Spinner />
+{:else}
+  <div class="caches-center">
+    {#each $caches as cache (cache.id)}
+      <CacheCard {cache} />
+    {/each}
+  </div>
+{/if}
 
 <style>
   .caches-center {

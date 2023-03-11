@@ -8,71 +8,79 @@
   import { getCacheById } from '../api/cache'
   import Button from '../components/Button.svelte'
   import Link from '../components/Link.svelte'
+  import Spinner from '../components/Spinner.svelte'
 
   export let params
   let cache = {}
+  let loading = true
 
   onMount(async () => {
     try {
       cache = await getCacheById(params.id)
       console.log(cache)
+      loading = false
     } catch (error) {
+      loading = false
       console.log(error)
       notyf.error(error.message)
     }
   })
 </script>
 
-<section class="page">
-  <PageTitle icon='distance' title='Cache Details'>
-      <Link href={`/caches`} caption='Back'
-      icon='chevron_left' iconLeft='1' style="outline" />
-  </PageTitle>
-  <article>
-    <div class="row">
-      <div class="colth">Kind:</div>
-      <div class="coltd">{cache.kind}</div>
-    </div>
-    <div class="row">
-      <div class="colth">Name:</div>
-      <div class="coltd">{cache.name}</div>
-    </div>
-    <div class="row">
-      <div class="colth">GC:</div>
-      <div class="coltd">{cache.gc}</div>
-    </div>
-    <div class="row">
-      <div class="colth">Coords:</div>
-      <div class="coltd">{cache.coords}</div>
-    </div>
-    <div class="row">
-      <div class="colth">Place:</div>
-      <div class="coltd">{cache.place}</div>
-    </div>
-    <div class="row">
-      <div class="colth">Verified:</div>
-      <div class="coltd">{cache.verified}</div>
-    </div>
-    <div class="row">
-      <div class="colth">User:</div>
-      <div class="coltd">{cache.user}</div>
-    </div>
-    <div class="row">
-      <div class="colth">Created:</div>
-      <div class="coltd">
-        <Time timestamp={cache.created_at} format="D.M.YYYY H:m" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="colth">Updated:</div>
-      <div class="coltd">
-        <Time timestamp={cache.updated_at} format="D.M.YYYY H:m" />
-      </div>
-      <!-- <div class="coltd">{cache.updated_at}</div> -->
-    </div>
-  </article>
-</section>
 
+{#if loading}
+  <Spinner />
+{:else}
+  <section class="page">
+    <PageTitle icon='distance' title='Cache Details'>
+        <Link href={`/caches`} caption='Back'
+        icon='chevron_left' iconLeft='1' style="outline" />
+    </PageTitle>
+    <article>
+      <div class="row">
+        <div class="colth">Kind:</div>
+        <div class="coltd">{cache.kind}</div>
+      </div>
+      <div class="row">
+        <div class="colth">Name:</div>
+        <div class="coltd">{cache.name}</div>
+      </div>
+      <div class="row">
+        <div class="colth">GC:</div>
+        <div class="coltd">{cache.gc}</div>
+      </div>
+      <div class="row">
+        <div class="colth">Coords:</div>
+        <div class="coltd">{cache.coords}</div>
+      </div>
+      <div class="row">
+        <div class="colth">Place:</div>
+        <div class="coltd">{cache.place}</div>
+      </div>
+      <div class="row">
+        <div class="colth">Verified:</div>
+        <div class="coltd">{cache.verified}</div>
+      </div>
+      <div class="row">
+        <div class="colth">User:</div>
+        <div class="coltd">{cache.user}</div>
+      </div>
+      <div class="row">
+        <div class="colth">Created:</div>
+        <div class="coltd">
+          <Time timestamp={cache.created_at} format="D.M.YYYY H:m" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="colth">Updated:</div>
+        <div class="coltd">
+          <Time timestamp={cache.updated_at} format="D.M.YYYY H:m" />
+        </div>
+        <!-- <div class="coltd">{cache.updated_at}</div> -->
+      </div>
+    </article>
+  </section>
+{/if}
 <style>
   article {
     background: var(--col-grey-lt);
