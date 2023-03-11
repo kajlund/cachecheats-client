@@ -21,11 +21,14 @@ const store = {
     })
   },
   setActivePage: (url) => {
+    //tmp = url.split('/')
     let page;
     if (url === '/') {
       page = 'home'
-    } else if (url) {
-      page = url.substring(1, 99)
+    } else if (url === '/about') {
+      page = 'about'
+    } else if (url.indexOf('/caches') === 0) {
+      page = 'caches'
     } else {
       page = 'home'
     }
