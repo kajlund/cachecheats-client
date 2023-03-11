@@ -26,6 +26,7 @@
         next();
       },
       () => {
+        // console.log('route: ', route)
         state.setActivePage(route.path)
         if (route.auth && !user) {
           // router.redirect("/login");
