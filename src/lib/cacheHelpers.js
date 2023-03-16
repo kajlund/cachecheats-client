@@ -27,3 +27,19 @@ export function getImage(name) {
     default: return null
   }
 }
+
+export let cacheTypes = [
+  { id: 'TRADITIONAL', text: 'Traditional' },
+  { id: 'MYSTERY', text: 'Mystery' },
+  { id: 'MULTI', text: 'Multi' },
+  { id: 'EARTH', text: 'Earth' },
+  { id: 'EVENT', text: 'Event' },
+  { id: 'CITO', text: 'Cito' },
+  { id: 'MEGA', text: 'Mega' },
+  { id: 'GIGA', text: 'Giga' },
+  { id: 'WHERIGO', text: 'Wherigo' },
+  { id: 'HQ', text: 'HQ' },
+  { id: 'LAB', text: 'Lab' },
+  { id: 'VIRTUAL', text: 'Virtual' },
+  { id: 'WEBCAM', text: 'Webcam' }
+]
