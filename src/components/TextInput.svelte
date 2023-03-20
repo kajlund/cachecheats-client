@@ -13,9 +13,9 @@
 </script>
 
 <div class="form-control">
-  <label for={id}>{label}</label>
+  <label class="label" for={id}>{label}</label>
   {#if controlType === "textarea"}
-    <textarea
+    <textarea class="field"
       class:invalid={!valid && touched}
       {rows}
       {id}
@@ -24,7 +24,7 @@
       on:blur={() => (touched = true)}
     />
   {:else}
-    <input
+    <input class="field"
       class:invalid={!valid && touched}
       {type}
       {id}
@@ -50,33 +50,5 @@
     background: var(--col-white);
     padding: 0.2rem 0.25rem;
     transition: border-color 0.1s ease-out;
-  }
-
-  input:focus,
-  textarea:focus {
-    border-color: var(--col-primary);
-    outline: none;
-  }
-  input::placeholder {
-    opacity: 0.2;
-  }
-
-  label {
-    font-size: 0.8rem;
-    color: var(--col-grey-dk);
-    display: block;
-    width: 100%;
-  }
-
-  .form-control {
-    padding: 0.5rem 0;
-    width: 100%;
-    margin: 0.25rem 0;
-  }
-  .error-message {
-    margin: 0;
-    padding: 0;
-    color: var(--col-primary);
-    font-size: 0.8rem;
   }
 </style>
