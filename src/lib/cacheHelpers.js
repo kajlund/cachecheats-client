@@ -29,17 +29,17 @@ export function getImage(name) {
 }
 
 export let cacheTypes = [
-  { id: 'TRADITIONAL', text: 'Traditional' },
-  { id: 'MYSTERY', text: 'Mystery' },
-  { id: 'MULTI', text: 'Multi' },
-  { id: 'EARTH', text: 'Earth' },
-  { id: 'EVENT', text: 'Event' },
-  { id: 'CITO', text: 'Cito' },
-  { id: 'MEGA', text: 'Mega' },
-  { id: 'GIGA', text: 'Giga' },
-  { id: 'WHERIGO', text: 'Wherigo' },
-  { id: 'HQ', text: 'HQ' },
-  { id: 'LAB', text: 'Lab' },
-  { id: 'VIRTUAL', text: 'Virtual' },
-  { id: 'WEBCAM', text: 'Webcam' }
+  { value: 'TRADITIONAL', label: 'Traditional' },
+  { value: 'MYSTERY', label: 'Mystery' },
+  { value: 'MULTI', label: 'Multi' },
+  { value: 'EARTH', label: 'Earth' },
+  { value: 'EVENT', label: 'Event' },
+  { value: 'CITO', label: 'Cito' },
+  { value: 'MEGA', label: 'Mega' },
+  { value: 'GIGA', label: 'Giga' },
+  { value: 'WHERIGO', label: 'Wherigo' },
+  { value: 'HQ', label: 'HQ' },
+  { value: 'LAB', label: 'Lab' },
+  { value: 'VIRTUAL', label: 'Virtual' },
+  { value: 'WEBCAM', label: 'Webcam' }
 ]
